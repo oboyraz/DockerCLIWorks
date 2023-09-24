@@ -13,13 +13,13 @@ docker volume prune -a
 
 2: centos, alpine, nginx, httpd:alpine, ozgurozturknet/adanzyedocker, ozgurozturknet/hello-app, ozgurozturknet/app1 isimli imajları çalıştığımız sisteme çekelim. 
 
-docker pull centos
-docker pull alpine
-docker pull nginx
-docker pull httpd:alpine
-docker pull ozgurozturknet/adanzyedocker
-docker pull ozgurozturknet/hello-app
-docker pull ozgurozturknet/app1
+docker image pull centos
+docker image pull alpine
+docker image pull nginx
+docker image pull httpd:alpine
+docker image pull ozgurozturknet/adanzyedocker
+docker image pull ozgurozturknet/hello-app
+docker image pull ozgurozturknet/app1
 
 3: ozgurozturknet/app1 isimli imajdan bir container yaratalım.
 
