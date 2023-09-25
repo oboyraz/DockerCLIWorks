@@ -2,7 +2,11 @@
 
 ```bash
 docker container ls
+```
+```bash
 docker image ls
+```
+```bash
 docker volume ls
 ```
 
@@ -10,7 +14,11 @@ docker volume ls
 
 ```bash
 docker container prune -a
+```
+```bash
 docker image prune -a
+```
+```bash
 docker volume prune -a
 ```
 
@@ -18,11 +26,23 @@ docker volume prune -a
 
 ```bash
 docker image pull centos
+```
+```bash
 docker image pull alpine
+```
+```bash
 docker image pull nginx
+```
+```bash
 docker image pull httpd:alpine
+```
+```bash
 docker image pull ozgurozturknet/adanzyedocker
+```
+```bash
 docker image pull ozgurozturknet/hello-app
+```
+```bash
 docker image pull ozgurozturknet/app1
 ```
 
@@ -36,6 +56,8 @@ docker container run --name app1 ozgurozturknet/app1
 
 ```bash
 docker container run -d httpd:alpine
+```
+```bash
 docker container ls
 ```
 
@@ -49,7 +71,11 @@ docker container logs nervous_turing
 
 ```bash
 docker container stop nervous_turing
+```
+```bash
 docker container start nervous_turing
+```
+```bash
 docker container rm -f nervous_turing
 ```
 
@@ -62,9 +88,15 @@ docker container run -d -p 80:80 --name websunucu ozgurozturknet/adanzyedocker
 ## 8: websunucu adlı bu container’ın içerisine bağlanalım. /usr/local/apache2/htdocs klasörünün altına geçelim ve echo “denemedir” >> index.html komutuyla buradaki dosyaya denemedir yazısını ekleyelim. Web tarayıcıya geçerek dosyaya ekleme yapabildiğimizi görmek için refresh edelim. Sonrasında container içerisinden exit ile çıkalım.
 
 ```bash
-docker exec -it websunucu sh 
+docker exec -it websunucu sh
+```
+```bash
 cd /usr/local/apache2/htdocs/
+```
+```bash
 echo "denemedir" >> index.html 
+```
+```bash
 exit
 ```
 
@@ -90,9 +122,17 @@ docker volume create alistirma1
 
 ```bash
 docker container run -it --name birinci -v alistirma1:/test alpine sh
+```
+```bash
 cd test/
+```
+```bash
 touch abc.txt
+```
+```bash
 ls
+```
+```bash
 echo "deneme" >> abc.txt
 ```
 
@@ -100,8 +140,14 @@ echo "deneme" >> abc.txt
 
 ```bash
 docker container run -it --name ikinci -v alistirma1:/test alpine sh
+```
+```bash
 cd test/
+```
+```bash
 ls
+```
+```bash
 cat abc.txt
 ```
 
@@ -109,8 +155,14 @@ cat abc.txt
 
 ```bash
 docker container run -it --name ucuncu -v alistima:/test:ro alpine sh
+```
+```bash
 cd test/
+```
+```bash
 touch abc1.txt
+```
+```bash
 "touch: abc1.txt: Read-only file system"
 ```
 
@@ -118,11 +170,23 @@ touch abc1.txt
 
 ```bash
 mkdir deneme
+```
+```bash
 cd deneme
+```
+```bash
 touch index.html
+```
+```bash
 echo "deneme1" >> index.html
+```
+```bash
 echo "deneme2" >> index.html
+```
+```bash
 pwd
+```
+```bash
 /Users/oboyraz/Documents/deneme
 ```
 
@@ -130,6 +194,8 @@ pwd
 
 ```bash
 docker container run -d -p 80:80 --name websunucu1 -v /Users/oboyraz/Documents/deneme:/usr/local/apache2/htdocs ozgurozturknet/adanzyedocker
+```
+```bash
 echo "deneme3" >> index.html
 ```
 
@@ -137,5 +203,7 @@ echo "deneme3" >> index.html
 
 ```bash
 docker container prune
+```
+```bash
 docker container rm -f websunucu1
 ```
