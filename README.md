@@ -112,7 +112,7 @@ docker container rm -f websunucu
 docker container run alpine ls
 ```
 
-## 11: “alistirma1” isimli bir volüme yaratalım. 
+## 11: “alistirma1” isimli bir volume yaratalım. 
 
 ```bash
 docker volume create alistirma1
